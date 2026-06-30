@@ -88,7 +88,7 @@ export function Hero() {
           />
           <div className="relative overflow-hidden rounded-[1.75rem] ring-1 ring-white/15 shadow-[0_44px_90px_-30px_rgba(76,29,149,0.7)]">
             <img
-              src="/img/wizardops-hero-purple.png"
+              src="/img/wizardops-hero-card.png"
               alt={t("hero.logo.alt")}
               className="block aspect-square w-full object-cover"
               decoding="async"
