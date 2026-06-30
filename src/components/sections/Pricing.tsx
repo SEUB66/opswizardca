@@ -5,6 +5,7 @@ import { BRAND, formatPrice } from "@/lib/brand";
 import { Reveal } from "../Reveal";
 import { AmbientGlow } from "../AmbientGlow";
 import { ROICalculator } from "./ROICalculator";
+import { cta } from "../cta";
 
 const inclusions: TKey[] = [
   "price.incl.1",
@@ -62,10 +63,7 @@ export function Pricing() {
             </div>
             <p className="mt-2 text-sm text-muted-foreground">{t("price.card.infra")}</p>
 
-            <Link
-              to="/contact"
-              className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand px-6 py-3.5 text-sm font-bold text-white shadow-[0_12px_36px_-10px_rgba(124,58,237,0.75)] transition hover:translate-y-[-1px]"
-            >
+            <Link to="/contact" className={cta("primary", "md", "mt-6 w-full")}>
               {t("price.card.cta")} <ArrowRight className="h-4 w-4" />
             </Link>
 
@@ -89,6 +87,50 @@ export function Pricing() {
             <ROICalculator />
           </Reveal>
         </div>
+
+        {/* What sets the price — empty DB vs done-for-you + migration */}
+        <Reveal className="mt-5">
+          <p className="font-display text-xs font-black uppercase tracking-[0.15em] text-foreground">
+            {t("price.tiers.title")}
+          </p>
+          <p className="mb-4 mt-2 max-w-3xl text-sm leading-relaxed text-muted-foreground">
+            {t("price.tiers.lead")}
+          </p>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div className="rounded-2xl border border-border bg-card/40 p-6 backdrop-blur-sm">
+              <div className="flex items-center justify-between gap-3">
+                <span className="font-display text-2xl font-black tracking-tight text-foreground">
+                  {formatPrice(BRAND.priceLow, lang)}
+                </span>
+                <span className="rounded-md bg-secondary px-2.5 py-1 font-display text-[0.6rem] font-black uppercase tracking-[0.14em] text-muted-foreground">
+                  {t("price.tier.base.tag")}
+                </span>
+              </div>
+              <h4 className="mt-3 font-display text-lg font-bold tracking-tight text-foreground">
+                {t("price.tier.base.t")}
+              </h4>
+              <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
+                {t("price.tier.base.d")}
+              </p>
+            </div>
+            <div className="glass glass-edge rounded-2xl p-6 ring-2 ring-violet/45">
+              <div className="flex items-center justify-between gap-3">
+                <span className="font-display text-2xl font-black tracking-tight text-brand">
+                  {formatPrice(BRAND.priceHigh, lang)}
+                </span>
+                <span className="rounded-md bg-violet/15 px-2.5 py-1 font-display text-[0.6rem] font-black uppercase tracking-[0.14em] text-violet ring-1 ring-violet/30">
+                  {t("price.tier.full.tag")}
+                </span>
+              </div>
+              <h4 className="mt-3 font-display text-lg font-bold tracking-tight text-foreground">
+                {t("price.tier.full.t")}
+              </h4>
+              <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
+                {t("price.tier.full.d")}
+              </p>
+            </div>
+          </div>
+        </Reveal>
 
         {/* Comparison table */}
         <Reveal className="mt-12 overflow-hidden rounded-2xl border border-border bg-card/40 backdrop-blur-sm">

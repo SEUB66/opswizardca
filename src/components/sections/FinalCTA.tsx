@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { CalendarCheck, ArrowUpRight } from "lucide-react";
 import { useT } from "@/lib/i18n";
 import { Reveal } from "../Reveal";
+import { cta } from "../cta";
 
 export function FinalCTA() {
   const { t } = useT();
@@ -53,17 +54,11 @@ export function FinalCTA() {
               {t("cta.lead")}
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-3.5">
-              <Link
-                to="/contact"
-                className="group inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-[0.95rem] font-bold text-[#4C1D95] shadow-lg transition hover:-translate-y-0.5"
-              >
+              <Link to="/contact" className={cta("light", "lg")}>
                 <CalendarCheck className="h-5 w-5" strokeWidth={2.3} />
                 {t("cta.button")}
               </Link>
-              <Link
-                to="/manifeste"
-                className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/5 px-7 py-4 text-[0.95rem] font-semibold text-white backdrop-blur transition hover:-translate-y-0.5 hover:bg-white/10"
-              >
+              <Link to="/manifeste" className={cta("ghost", "lg")}>
                 {t("cta.secondary")}
                 <ArrowUpRight className="h-5 w-5" strokeWidth={2.3} />
               </Link>
