@@ -353,6 +353,52 @@ html.lenis, html.lenis body { height: auto; }
 @keyframes live-pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.45; } }
 .live-dot { animation: live-pulse 2s ease-in-out infinite; }
 
+/* ── Retro CRT terminal (typed text on the PC screen) ───────────── */
+.crt-text {
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  color: #c8f4ff;
+  text-shadow:
+    0 0 4px rgba(140, 230, 255, 0.9),
+    0 0 10px rgba(80, 180, 255, 0.6);
+  white-space: pre-wrap;
+  word-break: break-word;
+  line-height: 1.32;
+  letter-spacing: 0.02em;
+}
+.crt-cursor {
+  display: inline-block;
+  width: 0.6em;
+  margin-left: 1px;
+  background: #d8f8ff;
+  box-shadow: 0 0 6px rgba(140, 230, 255, 0.9);
+  animation: crtBlink 1s steps(1) infinite;
+}
+@keyframes crtBlink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  50.01%,
+  100% {
+    opacity: 0;
+  }
+}
+.crt-scan {
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.18) 0px,
+    rgba(0, 0, 0, 0.18) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+}
+@media (prefers-reduced-motion: reduce) {
+  .crt-cursor {
+    animation: none;
+  }
+}
+
 /* Grid paper backdrop for the pricing / stack bands. */
 .grid-paper {
   background-image:

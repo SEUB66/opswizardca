@@ -463,6 +463,52 @@ export const dict = {
     fr: "Réessaie ou écris-nous directement.",
   },
 
+  // ── The developer (Seb / seub.net) ───────────────────────────
+  "dev.kicker": { en: "// The developer behind it", fr: "// Le développeur derrière le produit" },
+  "dev.role": {
+    en: "Full-stack developer · since 2003",
+    fr: "Développeur full-stack · depuis 2003",
+  },
+  "dev.tagline": {
+    en: "Retro in the heart 🩵 Modern in the code ⌨️",
+    fr: "Rétro dans le cœur 🩵 Moderne dans le code ⌨️",
+  },
+  "dev.headline": {
+    en: "I turn your ideas into software that pays off.",
+    fr: "Je transforme tes idées en logiciels rentables.",
+  },
+  "dev.bio": {
+    en: "Senior full-stack developer. 20+ years designing websites, apps and custom platforms — from design to production. Marketing sites, web apps, dashboards, ERPs, real-time systems, e-commerce and 3D experiences. I own the full cycle: architecture, design, development and deployment.",
+    fr: "Développeur full-stack senior. 20+ ans à concevoir des sites, des apps et des plateformes sur mesure — du design à la production. Sites vitrines, apps web, tableaux de bord, ERP, systèmes temps réel, e-commerce et expériences 3D. Je maîtrise le cycle complet : architecture, design, développement et déploiement.",
+  },
+  "dev.svc.apps": { en: "Web apps & platforms", fr: "Apps web et plateformes" },
+  "dev.svc.erp": { en: "Dashboards & ERP", fr: "Tableaux de bord et ERP" },
+  "dev.svc.rt": { en: "Real-time & IoT", fr: "Temps réel et IoT" },
+  "dev.svc.3d": { en: "3D web & e-commerce", fr: "Web 3D et e-commerce" },
+  "dev.close": {
+    en: "One point of contact, from concept to launch. Clean, fast code built around your customers — like Wizard Ops itself.",
+    fr: "Un seul point de contact, du concept au lancement. Du code propre et rapide bâti autour de tes clients — comme Wizard Ops lui-même.",
+  },
+  "dev.connect": { en: "Let's connect", fr: "Connectons-nous" },
+  "dev.stats.alt": {
+    en: "seub.net — Top 1 developer in Canada · 58,742 contributions · @seub66",
+    fr: "seub.net — Top 1 développeur au Canada · 58 742 contributions · @seub66",
+  },
+  "dev.tv.alt": {
+    en: "Sébastien Germain on a retro TV",
+    fr: "Sébastien Germain sur une télé rétro",
+  },
+  // CRT terminal lines (typed on the retro PC screen)
+  "crt.l1": { en: "seub.net :: software engineering", fr: "seub.net :: génie logiciel" },
+  "crt.l2": { en: "> 20+ years online ............ OK", fr: "> 20+ ans en ligne ........... OK" },
+  "crt.l3": { en: "> lifetime software .......... OK", fr: "> logiciel à vie ............. OK" },
+  "crt.l4": {
+    en: "> subscriptions .............. KILLED",
+    fr: "> abonnements ................ TUÉS",
+  },
+  "crt.l5": { en: "> status: ready to build", fr: "> statut: prêt à bâtir" },
+  "crt.l6": { en: "> tell me what to build_", fr: "> dis-moi quoi bâtir_" },
+
   // ── Manifesto ─────────────────────────────────────────────────
   "man.kicker": { en: "// The manifesto", fr: "// Le manifeste" },
   "man.title.a": { en: "A hard no", fr: "Un non catégorique" },

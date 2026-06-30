@@ -1,14 +1,26 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { Mail, Clock, MapPin, Send, CheckCircle2, Loader2 } from "lucide-react";
+import {
+  Mail,
+  Clock,
+  MapPin,
+  Send,
+  CheckCircle2,
+  Loader2,
+  Linkedin,
+  Github,
+  Globe,
+  type LucideIcon,
+} from "lucide-react";
 import { toast } from "sonner";
 import { SiteLayout } from "@/components/SiteLayout";
 import { Reveal } from "@/components/Reveal";
 import { AmbientGlow } from "@/components/AmbientGlow";
+import { CrtTerminal } from "@/components/CrtTerminal";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { useT } from "@/lib/i18n";
+import { useT, type TKey } from "@/lib/i18n";
 import { leadSchema, sendLead } from "@/lib/send-lead";
 import { cta } from "@/components/cta";
 
@@ -17,6 +29,14 @@ export const Route = createFileRoute("/contact")({
 });
 
 type Status = "idle" | "sending" | "sent";
+
+const serviceTags: TKey[] = ["dev.svc.apps", "dev.svc.erp", "dev.svc.rt", "dev.svc.3d"];
+
+const SEB = {
+  linkedin: "https://www.linkedin.com/in/seub",
+  site: "https://seub.net",
+  github: "https://github.com/seub66",
+};
 
 function ContactPage() {
   const { t } = useT();
@@ -56,7 +76,6 @@ function ContactPage() {
       setStatus("sent");
       toast.success(t("ct.toast.ok"), { description: t("ct.toast.ok.d") });
       form.reset();
-      // Return to idle so the visitor can send a second request if they need to.
       window.setTimeout(() => setStatus("idle"), 4000);
     } catch {
       setStatus("idle");
@@ -66,55 +85,144 @@ function ContactPage() {
 
   return (
     <SiteLayout>
-      <section className="relative isolate overflow-hidden pt-28 pb-20 sm:pt-36 sm:pb-28">
+      {/* ── The developer behind it ─────────────────────────────── */}
+      <section className="relative isolate overflow-hidden pt-28 pb-16 sm:pt-36 sm:pb-20">
+        <AmbientGlow />
+        <div className="mx-auto max-w-[1560px] px-5 sm:px-8 lg:px-12">
+          <div className="grid items-center gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:gap-16">
+            {/* Seb on a retro TV */}
+            <Reveal className="relative mx-auto w-full max-w-md lg:max-w-none">
+              <div
+                aria-hidden
+                className="absolute -inset-5 -z-10 rounded-[2.5rem] opacity-60 blur-3xl"
+                style={{
+                  background: "radial-gradient(60% 60% at 50% 40%, #A855F7, transparent 70%)",
+                }}
+              />
+              <img
+                src="/img/seb-tv.png"
+                alt={t("dev.tv.alt")}
+                className="w-full rounded-2xl ring-1 ring-white/10 shadow-[0_44px_90px_-30px_rgba(0,0,0,0.6)]"
+                decoding="async"
+                fetchPriority="high"
+              />
+            </Reveal>
+
+            {/* Bio */}
+            <Reveal delay={0.08}>
+              <img
+                src="/img/seub-logo.gif"
+                alt="seub.net — software engineering"
+                className="h-14 w-auto object-contain sm:h-16"
+                decoding="async"
+              />
+              <p className="mt-5 font-display text-xs font-black uppercase tracking-[0.18em] text-violet">
+                {t("dev.role")}
+              </p>
+              <p className="mt-2 text-sm font-semibold text-muted-foreground">{t("dev.tagline")}</p>
+              <h1 className="mt-4 font-display text-3xl font-bold leading-[1.05] tracking-[-0.03em] text-foreground sm:text-5xl">
+                {t("dev.headline")}
+              </h1>
+              <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground">
+                {t("dev.bio")}
+              </p>
+
+              <div className="mt-6 flex flex-wrap gap-2.5">
+                {serviceTags.map((k) => (
+                  <span
+                    key={k}
+                    className="rounded-md border border-border bg-card/60 px-3 py-1.5 font-display text-xs font-bold uppercase tracking-wide text-foreground/80"
+                  >
+                    {t(k)}
+                  </span>
+                ))}
+              </div>
+
+              <p className="mt-6 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+                {t("dev.close")}
+              </p>
+
+              <div className="mt-8 flex flex-wrap items-center gap-3">
+                <a
+                  href={SEB.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={cta("primary", "md")}
+                >
+                  <Linkedin className="h-4 w-4" strokeWidth={2.2} />
+                  {t("dev.connect")}
+                </a>
+                <SocialLink href={SEB.site} icon={Globe} label="seub.net" />
+                <SocialLink href={SEB.github} icon={Github} label="@seub66" />
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* ── seub.net stats band ─────────────────────────────────── */}
+      <section className="relative z-10 px-5 sm:px-8 lg:px-12">
+        <Reveal className="mx-auto max-w-[1560px]">
+          <a
+            href={SEB.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block overflow-hidden rounded-2xl ring-1 ring-white/10 transition hover:ring-violet/40"
+          >
+            <img
+              src="/img/seub-stats.png"
+              alt={t("dev.stats.alt")}
+              className="w-full"
+              loading="lazy"
+              decoding="async"
+            />
+          </a>
+        </Reveal>
+      </section>
+
+      {/* ── Book a demo: CRT + form ─────────────────────────────── */}
+      <section id="contact" className="relative isolate overflow-hidden py-20 sm:py-28">
         <AmbientGlow />
         <div className="mx-auto max-w-[1560px] px-5 sm:px-8 lg:px-12">
           <Reveal className="max-w-2xl">
             <p className="font-display text-sm font-bold uppercase tracking-[0.15em] text-violet">
               {t("ct.kicker")}
             </p>
-            <h1 className="mt-3 font-display text-4xl font-bold leading-[1.02] tracking-[-0.03em] text-foreground sm:text-6xl">
+            <h2 className="mt-3 font-display text-3xl font-bold leading-[1.02] tracking-[-0.03em] text-foreground sm:text-5xl">
               {t("ct.title")}
-            </h1>
+            </h2>
             <p className="mt-5 text-base leading-relaxed text-muted-foreground sm:text-lg">
               {t("ct.lead")}
             </p>
           </Reveal>
 
-          <div className="mt-12 grid gap-6 lg:grid-cols-[0.85fr_1.15fr]">
-            {/* Info column */}
-            <Reveal className="flex flex-col gap-4">
-              <InfoCard
-                icon={<Mail className="h-5 w-5 text-violet" />}
-                label={t("ct.info.email")}
-                value="hello@wizardops.ca"
-                href="mailto:hello@wizardops.ca"
-              />
-              <InfoCard
-                icon={<Clock className="h-5 w-5 text-violet" />}
-                label={t("ct.info.response")}
-                value={t("ct.info.response.v")}
-              />
-              <InfoCard
-                icon={<MapPin className="h-5 w-5 text-violet" />}
-                label={t("ct.info.region")}
-                value={t("ct.info.region.v")}
-              />
-              <div
-                className="relative mt-2 hidden overflow-hidden rounded-2xl border border-violet/25 sm:block"
-                aria-hidden
-              >
-                <img
-                  src="/img/wizardops-banner-dark.jpg"
-                  alt=""
-                  className="h-40 w-full object-cover"
-                  loading="lazy"
-                  decoding="async"
+          <div className="mt-12 grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
+            {/* CRT PC + info */}
+            <Reveal className="flex flex-col gap-5">
+              <CrtTerminal />
+              <div className="grid gap-3">
+                <InfoCard
+                  icon={Mail}
+                  label={t("ct.info.email")}
+                  value="hello@wizardops.ca"
+                  href="mailto:hello@wizardops.ca"
                 />
+                <div className="grid gap-3 sm:grid-cols-2">
+                  <InfoCard
+                    icon={Clock}
+                    label={t("ct.info.response")}
+                    value={t("ct.info.response.v")}
+                  />
+                  <InfoCard
+                    icon={MapPin}
+                    label={t("ct.info.region")}
+                    value={t("ct.info.region.v")}
+                  />
+                </div>
               </div>
             </Reveal>
 
-            {/* Form column */}
+            {/* Form */}
             <Reveal delay={0.08} className="glass glass-edge rounded-3xl p-6 sm:p-8">
               <form onSubmit={onSubmit} noValidate className="grid gap-4">
                 <Field id="name" label={t("ct.f.name")} error={errors.name}>
@@ -175,21 +283,43 @@ function ContactPage() {
   );
 }
 
+function SocialLink({
+  href,
+  icon: Icon,
+  label,
+}: {
+  href: string;
+  icon: LucideIcon;
+  label: string;
+}) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center gap-2 rounded-lg border border-border bg-card/60 px-4 py-3 font-display text-[0.78rem] font-bold uppercase tracking-[0.1em] text-foreground backdrop-blur transition hover:-translate-y-0.5 hover:border-violet hover:text-violet"
+    >
+      <Icon className="h-4 w-4" strokeWidth={2.2} />
+      {label}
+    </a>
+  );
+}
+
 function InfoCard({
-  icon,
+  icon: Icon,
   label,
   value,
   href,
 }: {
-  icon: React.ReactNode;
+  icon: LucideIcon;
   label: string;
   value: string;
   href?: string;
 }) {
   const body = (
     <div className="flex items-center gap-4 rounded-2xl border border-border bg-card/50 p-5 backdrop-blur-sm transition hover:border-violet">
-      <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-white/10 bg-background/50">
-        {icon}
+      <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-white/10 bg-background/50 text-violet">
+        <Icon className="h-5 w-5" strokeWidth={2.1} />
       </span>
       <div>
         <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
