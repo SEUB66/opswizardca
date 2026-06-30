@@ -23,6 +23,15 @@ import { Label } from "@/components/ui/label";
 import { useT, type TKey } from "@/lib/i18n";
 import { leadSchema, sendLead } from "@/lib/send-lead";
 import { cta } from "@/components/cta";
+import { BRAND } from "@/lib/brand";
+
+/** Jump focus to the lead form — wired to the retro "Contact" keyboard. */
+function focusForm() {
+  const el = document.getElementById("name");
+  if (!el) return;
+  el.scrollIntoView({ behavior: "smooth", block: "center" });
+  window.setTimeout(() => el.focus({ preventScroll: true }), 350);
+}
 
 export const Route = createFileRoute("/contact")({
   component: ContactPage,
@@ -220,10 +229,51 @@ function ContactPage() {
                   />
                 </div>
               </div>
+
+              {/* Retro keyboard — press the "Contact" key to jump into the form */}
+              <button
+                type="button"
+                onClick={focusForm}
+                className="group flex items-center gap-4 rounded-2xl border border-border bg-card/50 p-4 text-left backdrop-blur-sm transition hover:border-violet sm:p-5"
+              >
+                <img
+                  src="/img/retro-keyboard.png"
+                  alt=""
+                  aria-hidden
+                  className="h-[5.5rem] w-auto shrink-0 object-contain transition-transform duration-300 group-hover:-translate-y-1 group-active:translate-y-0.5 sm:h-24"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div>
+                  <p className="font-display text-base font-bold tracking-tight text-foreground sm:text-lg">
+                    {t("ct.kb")}
+                  </p>
+                  <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                    {t("ct.kb.sub")}
+                  </p>
+                </div>
+              </button>
             </Reveal>
 
             {/* Form */}
             <Reveal delay={0.08} className="glass glass-edge rounded-3xl p-6 sm:p-8">
+              <div className="mb-6 flex items-center gap-4 border-b border-border pb-5">
+                <img
+                  src={BRAND.logo}
+                  alt=""
+                  aria-hidden
+                  className="h-14 w-auto shrink-0 object-contain drop-shadow-[0_3px_14px_rgba(124,58,237,0.35)] sm:h-16"
+                  decoding="async"
+                />
+                <div>
+                  <p className="font-display text-lg font-bold tracking-tight text-foreground sm:text-xl">
+                    {t("ct.form.t")}
+                  </p>
+                  <p className="mt-0.5 text-sm leading-relaxed text-muted-foreground">
+                    {t("ct.form.d")}
+                  </p>
+                </div>
+              </div>
               <form onSubmit={onSubmit} noValidate className="grid gap-4">
                 <Field id="name" label={t("ct.f.name")} error={errors.name}>
                   <Input
