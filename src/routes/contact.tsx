@@ -67,7 +67,7 @@ function ContactPage() {
     <SiteLayout>
       <section className="relative isolate overflow-hidden pt-28 pb-20 sm:pt-36 sm:pb-28">
         <AmbientGlow />
-        <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
+        <div className="mx-auto max-w-[1560px] px-5 sm:px-8 lg:px-12">
           <Reveal className="max-w-2xl">
             <p className="font-display text-sm font-bold uppercase tracking-[0.15em] text-violet">
               {t("ct.kicker")}

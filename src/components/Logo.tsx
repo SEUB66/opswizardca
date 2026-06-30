@@ -19,14 +19,14 @@ export function Logo({
   asLink?: boolean;
 }) {
   const inner = (
-    <span className={cn("group inline-flex items-center gap-2.5", className)}>
-      <span className="relative grid place-items-center overflow-hidden rounded-xl ring-1 ring-white/10 shadow-[0_8px_24px_-10px_rgba(124,58,237,0.6)]">
+    <span className={cn("group inline-flex items-center gap-3", className)}>
+      <span className="relative grid place-items-center overflow-hidden rounded-2xl ring-1 ring-white/10 shadow-[0_10px_28px_-10px_rgba(124,58,237,0.65)]">
         <img
           src={BRAND.logo}
           alt={wordmark ? "" : BRAND.name}
           aria-hidden={wordmark}
           className={cn(
-            "h-10 w-10 object-cover transition-transform duration-300 group-hover:scale-105 sm:h-11 sm:w-11",
+            "h-12 w-12 object-cover transition-transform duration-300 group-hover:scale-105 sm:h-14 sm:w-14",
             imgClassName,
           )}
           decoding="async"
@@ -34,7 +34,7 @@ export function Logo({
         />
       </span>
       {wordmark && (
-        <span className="font-display text-lg font-black uppercase leading-none tracking-[-0.02em] sm:text-xl">
+        <span className="font-display text-xl font-black uppercase leading-none tracking-[-0.02em] sm:text-2xl">
           <span className="text-brand">Wizard</span>
           <span className="text-foreground"> Ops</span>
         </span>

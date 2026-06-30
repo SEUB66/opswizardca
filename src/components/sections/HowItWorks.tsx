@@ -20,7 +20,7 @@ export function HowItWorks() {
   return (
     <section className="relative isolate overflow-hidden border-y border-border py-20 sm:py-28">
       <div aria-hidden className="grid-paper absolute inset-0 -z-10 opacity-60" />
-      <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
+      <div className="mx-auto max-w-[1560px] px-5 sm:px-8 lg:px-12">
         <Reveal className="max-w-3xl">
           <p className="font-display text-sm font-bold uppercase tracking-[0.15em] text-violet">
             {t("how.kicker")}
@@ -35,7 +35,7 @@ export function HowItWorks() {
             <Reveal
               key={s.t}
               delay={i * 0.07}
-              className="relative rounded-2xl border border-border bg-card/50 p-6 backdrop-blur-sm"
+              className="card-hover relative rounded-2xl border border-border bg-card/50 p-6 backdrop-blur-sm"
             >
               <div className="flex items-center gap-3">
                 <span className="grid h-11 w-11 place-items-center rounded-xl bg-brand text-lg font-black text-white shadow-[0_8px_24px_-10px_rgba(124,58,237,0.7)]">

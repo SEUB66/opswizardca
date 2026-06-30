@@ -61,7 +61,7 @@ export function Footer() {
       style={{ backgroundColor: "var(--footer-bg)" }}
     >
       <Bubbles />
-      <div className="relative z-10 mx-auto max-w-[1400px] px-5 py-14 sm:px-8 lg:px-12">
+      <div className="relative z-10 mx-auto max-w-[1560px] px-5 py-14 sm:px-8 lg:px-12">
         <div className="grid gap-10 md:grid-cols-[1.5fr_1fr_1fr_1.2fr]">
           <div>
             <Logo />
