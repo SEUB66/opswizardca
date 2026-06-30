@@ -1,0 +1,16 @@
+{
+  "name": "Wizard Ops",
+  "short_name": "Wizard Ops",
+  "description": "Lifetime software for local field-service businesses. Buy your kit once, own it forever. Zero subscriptions.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#23262B",
+  "theme_color": "#A855F7",
+  "icons": [
+    { "src": "/img/wizardops-logo.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/img/wizardops-logo.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/img/wizardops-logo.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
