@@ -509,6 +509,17 @@ export const dict = {
   "crt.l5": { en: "> status: ready to build", fr: "> statut: prêt à bâtir" },
   "crt.l6": { en: "> tell me what to build_", fr: "> dis-moi quoi bâtir_" },
 
+  // ── System guide ─────────────────────────────────────────────
+  "nav.guide": { en: "Guide", fr: "Guide" },
+  "guide.kicker": { en: "// System guide", fr: "// Guide du système" },
+  "guide.title.a": { en: "How Wizard Ops works,", fr: "Wizard Ops," },
+  "guide.title.b": { en: "step by step.", fr: "étape par étape." },
+  "guide.lead": {
+    en: "Everything your crew needs to run the system — from first sign-in to paid invoice. This is the very same guide built right into the app your team uses every day.",
+    fr: "Tout ce qu'il faut à ton équipe pour utiliser le système — de la première connexion à la facture payée. C'est exactement le guide intégré à l'app que ton équipe utilise chaque jour.",
+  },
+  "guide.cta": { en: "Book a demo", fr: "Réserver une démo" },
+
   // ── Manifesto ─────────────────────────────────────────────────
   "man.kicker": { en: "// The manifesto", fr: "// Le manifeste" },
   "man.title.a": { en: "A hard no", fr: "Un non catégorique" },

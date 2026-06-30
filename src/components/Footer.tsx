@@ -15,6 +15,7 @@ const productLinks: { hash: string; key: TKey }[] = [
 ];
 
 const companyLinks: { to: string; key: TKey }[] = [
+  { to: "/guide", key: "nav.guide" },
   { to: "/manifeste", key: "nav.manifesto" },
   { to: "/contact", key: "nav.contact" },
 ];

@@ -17,6 +17,7 @@ const anchorLinks: { hash: string; key: TKey }[] = [
 ];
 
 const pageLinks: { to: string; key: TKey }[] = [
+  { to: "/guide", key: "nav.guide" },
   { to: "/manifeste", key: "nav.manifesto" },
   { to: "/contact", key: "nav.contact" },
 ];
@@ -47,13 +48,13 @@ export function Navbar() {
       <div className="mx-auto flex h-20 max-w-[1560px] items-center justify-between gap-4 px-5 sm:px-8 lg:px-12">
         <Logo />
 
-        <nav className="hidden items-center gap-1 lg:flex">
+        <nav className="hidden items-center gap-0.5 xl:flex">
           {anchorLinks.map((l) => (
             <Link
               key={l.hash}
               to="/"
               hash={l.hash}
-              className="inline-flex h-9 items-center rounded-md px-3 text-sm font-semibold text-foreground/72 transition hover:bg-card/60 hover:text-foreground"
+              className="inline-flex h-9 items-center whitespace-nowrap rounded-md px-2.5 text-[0.82rem] font-semibold text-foreground/72 transition hover:bg-card/60 hover:text-foreground"
             >
               {t(l.key)}
             </Link>
@@ -62,7 +63,7 @@ export function Navbar() {
             <Link
               key={l.to}
               to={l.to}
-              className="inline-flex h-9 items-center rounded-md px-3 text-sm font-semibold text-foreground/72 transition hover:bg-card/60 hover:text-foreground"
+              className="inline-flex h-9 items-center whitespace-nowrap rounded-md px-2.5 text-[0.82rem] font-semibold text-foreground/72 transition hover:bg-card/60 hover:text-foreground"
               activeProps={{ className: "text-foreground" }}
             >
               {t(l.key)}
@@ -83,7 +84,7 @@ export function Navbar() {
             onClick={() => setOpen((v) => !v)}
             aria-label={t("nav.menu")}
             aria-expanded={open}
-            className="glass glass-edge grid h-10 w-10 place-items-center rounded-xl text-foreground transition hover:text-violet lg:hidden"
+            className="glass glass-edge grid h-10 w-10 place-items-center rounded-xl text-foreground transition hover:text-violet xl:hidden"
           >
             {open ? (
               <X className="h-5 w-5" strokeWidth={2.4} />
