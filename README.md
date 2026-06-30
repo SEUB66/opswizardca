@@ -36,7 +36,7 @@ fully own.
 
 ```bash
 bun install
-bun run dev      # http://localhost:5173
+bun run dev      # http://localhost:3000
 ```
 
 ## Quality gates
@@ -61,5 +61,9 @@ soft-succeeds (logs, no email) until `RESEND_API_KEY` is set.
 
 ## Deploy
 
-Builds to a standard Nitro output, deployable on **Vercel** or **Cloudflare
-Pages**. Point `wizardops.ca` at the deployment and set the env vars above.
+The `nitro()` Vite plugin is the deploy adapter. On **Vercel** the build
+auto-detects the platform and emits the Build Output API (`.vercel/output/`), so
+import the repo and deploy — no extra config. Reproduce that output locally with
+`NITRO_PRESET=vercel bun run build`. A plain `bun run build` emits a portable
+node-server build in `.output/` (also works on **Cloudflare Pages**). Point
+`wizardops.ca` at the deployment and set the env vars above.
