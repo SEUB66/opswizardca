@@ -1,0 +1,341 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Wizard Ops — design system.
+ *
+ * Brand: a "SaaS killer" for local field-service businesses.
+ * Identity: violet (#A855F7) + cyan (#22D3EE) magic on a calm grey surface
+ * (light grey / dark grey, never pure white or black), echoing the pixel-art
+ * wizard logo and the hex-grid + spotlight banner.
+ *
+ * @theme inline maps CSS vars to Tailwind utilities (bg-primary, text-cyan…).
+ * :root = light values, .dark = dark values.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Brand tokens */
+  --color-violet: var(--violet);
+  --color-violet-foreground: var(--violet-foreground);
+  --color-violet-glow: var(--violet-glow);
+  --color-cyan: var(--cyan);
+  --color-cyan-foreground: var(--cyan-foreground);
+  --color-cyan-glow: var(--cyan-glow);
+  --color-gold: var(--gold);
+
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-sans: "Chivo", system-ui, sans-serif;
+}
+
+:root {
+  --radius: 0.85rem;
+
+  /* Light — calm light grey, never stark white */
+  --background: #E7E9EE;
+  --foreground: #1A1D24;
+  --card: #F2F4F8;
+  --card-foreground: #1A1D24;
+  --popover: #F2F4F8;
+  --popover-foreground: #1A1D24;
+
+  --primary: #7C3AED;            /* violet — primary action, AA on white */
+  --primary-foreground: #FFFFFF;
+  --secondary: #E2E5EB;
+  --secondary-foreground: #1A1D24;
+  --muted: #E2E5EB;
+  --muted-foreground: #555E6D;
+  --accent: #7C3AED;
+  --accent-foreground: #FFFFFF;
+  --destructive: #DC2626;
+  --destructive-foreground: #FFFFFF;
+  --border: #D3D7DF;
+  --input: #D3D7DF;
+  --ring: #7C3AED;
+
+  /* Brand — magic violet + cyan */
+  --violet: #7C3AED;
+  --violet-foreground: #FFFFFF;
+  --violet-glow: #A855F7;
+  --cyan: #0E9AAE;               /* darkened for AA contrast on light grey */
+  --cyan-foreground: #08171A;
+  --cyan-glow: #22D3EE;
+  --gold: #E0A615;
+
+  --honeycomb-stroke: #C7CCD5;
+  --footer-bg: #DCDFE5;
+
+  --shadow-card: 0 8px 24px -12px rgba(26, 29, 36, 0.16), 0 2px 6px -2px rgba(26, 29, 36, 0.08);
+  --shadow-card-hover: 0 18px 50px -18px rgba(124, 58, 237, 0.42), 0 6px 18px -10px rgba(26, 29, 36, 0.22);
+}
+
+.dark {
+  /* Dark — graphite grey (the banner's hex backdrop), never pure black */
+  --background: #23262B;
+  --foreground: #ECEEF2;
+  --card: #2C3036;
+  --card-foreground: #ECEEF2;
+  --popover: #2C3036;
+  --popover-foreground: #ECEEF2;
+
+  --primary: #A855F7;            /* violet glows brighter on graphite */
+  --primary-foreground: #1A0B2E;
+  --secondary: #353A41;
+  --secondary-foreground: #ECEEF2;
+  --muted: #353A41;
+  --muted-foreground: #9BA3AF;
+  --accent: #A855F7;
+  --accent-foreground: #1A0B2E;
+  --destructive: #F87171;
+  --destructive-foreground: #1A0B2E;
+  --border: #3B414A;
+  --input: #3B414A;
+  --ring: #A855F7;
+
+  --violet: #A855F7;
+  --violet-foreground: #1A0B2E;
+  --violet-glow: #C084FC;
+  --cyan: #22D3EE;
+  --cyan-foreground: #06222A;
+  --cyan-glow: #67E8F9;
+  --gold: #FACC15;
+
+  --honeycomb-stroke: #3B414A;
+  --footer-bg: #1B1E22;
+
+  --shadow-card: 0 10px 30px -14px rgba(0, 0, 0, 0.6), 0 2px 8px -2px rgba(0, 0, 0, 0.4);
+  --shadow-card-hover: 0 22px 60px -20px rgba(168, 85, 247, 0.5), 0 8px 24px -12px rgba(0, 0, 0, 0.55);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4, h5 {
+    font-family: var(--font-display);
+  }
+  ::selection {
+    background: color-mix(in oklab, var(--violet) 32%, transparent);
+  }
+}
+
+/* ── Brand utilities ───────────────────────────────────────────── */
+
+/* Violet → cyan gradient text (the signature wordmark / headline accent). */
+@utility text-brand {
+  background-image: linear-gradient(110deg, var(--violet-glow) 0%, var(--violet) 38%, var(--cyan) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility bg-brand {
+  background-image: linear-gradient(110deg, var(--violet) 0%, var(--cyan) 100%);
+}
+
+@utility ring-glow {
+  box-shadow: 0 10px 40px -10px color-mix(in oklab, var(--violet) 50%, transparent),
+              0 0 0 1px color-mix(in oklab, var(--violet) 28%, transparent);
+}
+
+@utility card-elevated {
+  box-shadow: var(--shadow-card);
+}
+@utility card-elevated-hover {
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* ── Glassmorphism — frosted surfaces that refract the ambient glows ── */
+.glass {
+  position: relative;
+  isolation: isolate;
+  background-color: color-mix(in oklab, var(--card) 58%, transparent);
+  background-image:
+    linear-gradient(135deg, color-mix(in oklab, #ffffff 16%, transparent) 0%, transparent 42%),
+    linear-gradient(to bottom, color-mix(in oklab, var(--card) 30%, transparent), color-mix(in oklab, var(--card) 56%, transparent));
+  backdrop-filter: blur(26px) saturate(180%);
+  -webkit-backdrop-filter: blur(26px) saturate(180%);
+  border: 1px solid color-mix(in oklab, #ffffff 26%, transparent);
+  box-shadow:
+    inset 0 1.5px 0 color-mix(in oklab, #ffffff 44%, transparent),
+    inset 0 -1px 1px color-mix(in oklab, #000000 12%, transparent),
+    0 28px 60px -24px rgba(12, 10, 22, 0.5),
+    0 10px 24px -14px rgba(12, 10, 22, 0.4);
+}
+.dark .glass {
+  background-color: color-mix(in oklab, var(--card) 60%, transparent);
+  background-image:
+    linear-gradient(135deg, color-mix(in oklab, #ffffff 8%, transparent) 0%, transparent 44%),
+    linear-gradient(to bottom, color-mix(in oklab, var(--card) 36%, transparent), color-mix(in oklab, var(--card) 62%, transparent));
+  border-color: color-mix(in oklab, #ffffff 14%, transparent);
+  box-shadow:
+    inset 0 1.5px 0 color-mix(in oklab, #ffffff 16%, transparent),
+    inset 0 -1px 1px color-mix(in oklab, #000000 34%, transparent),
+    0 34px 66px -24px rgba(0, 0, 0, 0.75),
+    0 12px 26px -14px rgba(0, 0, 0, 0.5);
+}
+
+/* Masked gradient border — violet → cyan sheen across the edge. */
+.glass-edge::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(140deg,
+    color-mix(in oklab, var(--violet) 72%, transparent) 0%,
+    transparent 34%, transparent 66%,
+    color-mix(in oklab, var(--cyan) 60%, transparent) 100%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0.7;
+  z-index: 2;
+}
+
+.glass-hover {
+  transition: box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.45s, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.glass-hover:hover {
+  border-color: color-mix(in oklab, var(--violet) 70%, transparent);
+  box-shadow:
+    inset 0 1.5px 0 color-mix(in oklab, #ffffff 50%, transparent),
+    0 42px 90px -28px color-mix(in oklab, var(--violet) 62%, transparent),
+    0 18px 38px -18px rgba(12, 10, 22, 0.5);
+}
+
+/* Float inner content above the card plane inside a 3D-tilt context. */
+.depth-pop { transform: translateZ(60px); }
+.depth-pop-sm { transform: translateZ(36px); }
+
+/* Soft blurred color orbs behind glass so it has hues to refract. */
+.glow-orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(100px);
+  opacity: 0.5;
+  pointer-events: none;
+}
+.dark .glow-orb { opacity: 0.36; }
+
+/* ── Smooth scroll (Lenis) + anchored-section offset ─────────────── */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-stopped { overflow: hidden; }
+#top, #produit, #prix, #secteurs, #stack, #faq, #contact {
+  scroll-margin-top: 6.5rem;
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: smooth; }
+}
+
+/* ── Footer — animated 3D liquid bubbles (violet / cyan) ─────────── */
+.footer-bubbles { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+.bubble {
+  position: absolute;
+  bottom: -150px;
+  border-radius: 50%;
+  background: radial-gradient(150% 150% at 30% 20%, rgba(255,255,255,0.12) 0%, rgba(34,211,238,0.16) 30%, rgba(124,58,237,0.5) 80%, rgba(76,29,149,0.82) 100%);
+  box-shadow:
+    inset -10px -10px 25px rgba(124, 58, 237, 0.9),
+    inset 10px 10px 25px rgba(34, 211, 238, 0.4),
+    inset 0 0 10px rgba(255, 255, 255, 0.3),
+    0 10px 20px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  animation: rise infinite ease-in;
+  will-change: transform, opacity;
+}
+.bubble::after {
+  content: "";
+  position: absolute;
+  top: 15%; left: 15%;
+  width: 30%; height: 20%;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0) 70%);
+  transform: rotate(-45deg);
+}
+@keyframes rise {
+  0%   { transform: translate3d(0, 0, 0); opacity: 0; }
+  10%  { opacity: 1; }
+  50%  { transform: translate3d(20px, -45vh, 0); }
+  90%  { opacity: 0.85; }
+  100% { transform: translate3d(-20px, -90vh, 0); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .footer-bubbles { display: none; }
+}
+
+.footer-link-underline { position: relative; transition: color 0.3s ease; }
+.footer-link-underline::before {
+  content: "";
+  position: absolute;
+  width: 0; height: 1px;
+  bottom: -2px; left: 0;
+  background-color: var(--cyan-glow);
+  transition: width 0.3s ease;
+}
+.footer-link:hover .footer-link-underline::before { width: 100%; }
+
+/* ── Marquee (logos / sectors ticker) ────────────────────────────── */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 38s linear infinite;
+}
+.marquee-track:hover { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; flex-wrap: wrap; justify-content: center; }
+}
+
+/* Subtle pulsing "system online" dot. */
+@keyframes live-pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.45; } }
+.live-dot { animation: live-pulse 2s ease-in-out infinite; }
+
+/* Grid paper backdrop for the pricing / stack bands. */
+.grid-paper {
+  background-image:
+    linear-gradient(color-mix(in oklab, var(--foreground) 6%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in oklab, var(--foreground) 6%, transparent) 1px, transparent 1px);
+  background-size: 38px 38px;
+}
