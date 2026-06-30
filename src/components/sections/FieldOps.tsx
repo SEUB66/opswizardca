@@ -43,14 +43,14 @@ export function FieldOps() {
         <Reveal className="glass glass-edge relative mt-12 overflow-hidden rounded-3xl p-5 ring-2 ring-violet/45 sm:p-7">
           <div className="grid gap-4 sm:grid-cols-2">
             <img
-              src="/img/fleet-van-ford.png"
+              src="/img/fleet-van-ford.webp"
               alt="Ford cargo van wrapped in Wizard Ops branding"
               className="w-full rounded-xl bg-[#26262b] object-cover ring-1 ring-white/10"
               loading="lazy"
               decoding="async"
             />
             <img
-              src="/img/fleet-van-dodge.png"
+              src="/img/fleet-van-dodge.webp"
               alt="Dodge minivan wrapped in Wizard Ops branding"
               className="w-full rounded-xl bg-[#26262b] object-cover ring-1 ring-white/10"
               loading="lazy"

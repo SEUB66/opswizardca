@@ -11,10 +11,10 @@ export const BRAND = {
   /** Canonical site origin (no trailing slash). */
   url: "https://wizardops.ca",
   domain: "wizardops.ca",
-  /** Logo mark — the pixel-art wizard window, tightly cropped (transparent). */
-  logo: "/img/wizardops-mark.png",
-  /** Wide hex-grid + spotlight banner (dark) used for social / OG. */
-  ogImage: "/img/wizardops-banner-dark.jpg",
+  /** Logo mark — the pixel-art wizard window, tightly cropped (transparent WebP). */
+  logo: "/img/wizardops-mark.webp",
+  /** Social / OG share card — 1200×630, the mark + tagline on brand violet. */
+  ogImage: "/img/og-card.jpg",
   /** One-time licence price range (CAD). */
   priceLow: 3500,
   priceHigh: 5000,

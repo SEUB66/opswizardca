@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import {
   Mail,
+  LifeBuoy,
   Clock,
   MapPin,
   Send,
@@ -109,7 +110,7 @@ function ContactPage() {
                 }}
               />
               <img
-                src="/img/seb-tv.png"
+                src="/img/seb-tv.webp"
                 alt={t("dev.tv.alt")}
                 className="w-full rounded-2xl ring-1 ring-white/10 shadow-[0_44px_90px_-30px_rgba(0,0,0,0.6)]"
                 decoding="async"
@@ -179,7 +180,7 @@ function ContactPage() {
             className="block overflow-hidden rounded-2xl ring-1 ring-white/10 transition hover:ring-violet/40"
           >
             <img
-              src="/img/seub-stats.png"
+              src="/img/seub-stats.webp"
               alt={t("dev.stats.alt")}
               className="w-full"
               loading="lazy"
@@ -210,12 +211,20 @@ function ContactPage() {
             <Reveal className="flex flex-col gap-5">
               <CrtTerminal />
               <div className="grid gap-3">
-                <InfoCard
-                  icon={Mail}
-                  label={t("ct.info.email")}
-                  value="hello@wizardops.ca"
-                  href="mailto:hello@wizardops.ca"
-                />
+                <div className="grid gap-3 sm:grid-cols-2">
+                  <InfoCard
+                    icon={Mail}
+                    label={t("ct.info.email")}
+                    value="hello@wizardops.ca"
+                    href="mailto:hello@wizardops.ca"
+                  />
+                  <InfoCard
+                    icon={LifeBuoy}
+                    label={t("ct.info.support")}
+                    value="support@wizardops.ca"
+                    href="mailto:support@wizardops.ca"
+                  />
+                </div>
                 <div className="grid gap-3 sm:grid-cols-2">
                   <InfoCard
                     icon={Clock}
@@ -237,7 +246,7 @@ function ContactPage() {
                 className="group flex items-center gap-4 rounded-2xl border border-border bg-card/50 p-4 text-left backdrop-blur-sm transition hover:border-violet sm:p-5"
               >
                 <img
-                  src="/img/retro-keyboard.png"
+                  src="/img/retro-keyboard.webp"
                   alt=""
                   aria-hidden
                   className="h-[5.5rem] w-auto shrink-0 object-contain transition-transform duration-300 group-hover:-translate-y-1 group-active:translate-y-0.5 sm:h-24"

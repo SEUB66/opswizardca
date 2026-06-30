@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import { Link } from "@tanstack/react-router";
-import { Mail, ArrowUpRight } from "lucide-react";
+import { Mail, LifeBuoy, ArrowUpRight } from "lucide-react";
 import { Logo } from "./Logo";
 import { useT, type TKey } from "@/lib/i18n";
 import { BRAND } from "@/lib/brand";
@@ -119,10 +119,23 @@ export function Footer() {
             </p>
             <a
               href="mailto:hello@wizardops.ca"
-              className="footer-link mt-4 inline-flex items-center gap-2 text-sm text-muted-foreground transition hover:text-foreground"
+              className="footer-link mt-4 flex items-start gap-2.5 text-sm text-muted-foreground transition hover:text-foreground"
             >
-              <Mail className="h-4 w-4 text-violet" />
-              <span className="footer-link-underline">hello@wizardops.ca</span>
+              <Mail className="mt-0.5 h-4 w-4 shrink-0 text-violet" />
+              <span>
+                <span className="footer-link-underline">hello@wizardops.ca</span>
+                <span className="block text-xs text-muted-foreground/70">{t("ft.sales")}</span>
+              </span>
+            </a>
+            <a
+              href="mailto:support@wizardops.ca"
+              className="footer-link mt-3 flex items-start gap-2.5 text-sm text-muted-foreground transition hover:text-foreground"
+            >
+              <LifeBuoy className="mt-0.5 h-4 w-4 shrink-0 text-cyan" />
+              <span>
+                <span className="footer-link-underline">support@wizardops.ca</span>
+                <span className="block text-xs text-muted-foreground/70">{t("ft.support")}</span>
+              </span>
             </a>
             <div className="mt-5">
               <Link to="/contact" className={cta("primary", "sm")}>

@@ -71,7 +71,7 @@ export function CrtTerminal({ className = "" }: { className?: string }) {
   return (
     <div className={cn("relative select-none", className)} aria-hidden>
       <img
-        src="/img/retro-pc.png"
+        src="/img/retro-pc.webp"
         alt=""
         className="w-full drop-shadow-[0_30px_60px_-30px_rgba(0,0,0,0.6)]"
         decoding="async"
