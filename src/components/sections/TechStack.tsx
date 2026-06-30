@@ -35,7 +35,7 @@ export function TechStack() {
       className="relative isolate overflow-hidden border-y border-border py-20 sm:py-28"
     >
       <AmbientGlow />
-      <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
+      <div className="mx-auto max-w-[1560px] px-5 sm:px-8 lg:px-12">
         <Reveal className="max-w-3xl">
           <p className="font-display text-sm font-bold uppercase tracking-[0.15em] text-violet">
             {t("stack.kicker")}
@@ -53,7 +53,7 @@ export function TechStack() {
             <Reveal
               key={s.t}
               delay={(i % 5) * 0.05}
-              className="glass glass-edge group rounded-2xl p-5"
+              className="glass glass-edge glass-hover group rounded-2xl p-5"
             >
               <span className="grid h-11 w-11 place-items-center rounded-xl border border-white/15 bg-background/40 text-cyan transition group-hover:border-cyan group-hover:bg-cyan group-hover:text-cyan-foreground">
                 <s.icon className="h-5 w-5" strokeWidth={2} />
@@ -80,7 +80,7 @@ export function TechStack() {
               <Reveal
                 key={a.t}
                 delay={i * 0.06}
-                className="flex gap-4 rounded-2xl border border-border bg-card/50 p-5 backdrop-blur-sm"
+                className="card-hover flex gap-4 rounded-2xl border border-border bg-card/50 p-5 backdrop-blur-sm"
               >
                 <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-brand text-white">
                   <a.icon className="h-5 w-5" strokeWidth={2} />

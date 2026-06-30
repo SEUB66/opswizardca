@@ -32,7 +32,7 @@ export function Sectors() {
   const { t } = useT();
   return (
     <section id="secteurs" className="relative isolate overflow-hidden py-20 sm:py-28">
-      <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
+      <div className="mx-auto max-w-[1560px] px-5 sm:px-8 lg:px-12">
         <Reveal className="max-w-3xl">
           <p className="font-display text-sm font-bold uppercase tracking-[0.15em] text-violet">
             {t("sec.kicker")}
@@ -50,7 +50,7 @@ export function Sectors() {
             <Reveal
               key={s.key}
               delay={(i % 4) * 0.05}
-              className="group flex items-center gap-3 rounded-xl border border-border bg-card/50 p-4 backdrop-blur-sm transition hover:border-violet hover:bg-card"
+              className="card-hover group flex items-center gap-3 rounded-xl border border-border bg-card/50 p-4 backdrop-blur-sm"
             >
               <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg border border-white/10 bg-background/50 text-violet transition group-hover:bg-violet group-hover:text-violet-foreground">
                 <s.icon className="h-5 w-5" strokeWidth={2} />

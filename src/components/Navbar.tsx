@@ -43,7 +43,7 @@ export function Navbar() {
           : "bg-gradient-to-b from-background/40 to-background/0 backdrop-blur-md"
       }`}
     >
-      <div className="mx-auto flex h-[4.75rem] max-w-[1400px] items-center justify-between gap-4 px-5 sm:px-8 lg:px-12">
+      <div className="mx-auto flex h-20 max-w-[1560px] items-center justify-between gap-4 px-5 sm:px-8 lg:px-12">
         <Logo />
 
         <nav className="hidden items-center gap-1 lg:flex">
@@ -105,7 +105,7 @@ export function Navbar() {
             transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
             className="overflow-hidden border-y border-border bg-background/96 backdrop-blur-2xl lg:hidden"
           >
-            <div className="mx-auto grid max-w-[1400px] gap-1.5 px-5 pb-6 pt-3 sm:px-8">
+            <div className="mx-auto grid max-w-[1560px] gap-1.5 px-5 pb-6 pt-3 sm:px-8">
               {anchorLinks.map((l) => (
                 <Link
                   key={l.hash}
