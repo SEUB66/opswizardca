@@ -447,7 +447,8 @@ export const dict = {
     en: "Tell us your trade and what you pay today. We'll come back fast with a tailored demo and a one-time price.",
     fr: "Dis-nous ton métier et ce que tu paies aujourd'hui. On revient vite avec une démo sur mesure et un prix unique.",
   },
-  "ct.info.email": { en: "Email", fr: "Courriel" },
+  "ct.info.email": { en: "Sales & demos", fr: "Ventes et démos" },
+  "ct.info.support": { en: "Support", fr: "Soutien" },
   "ct.info.response": { en: "Typical reply", fr: "Réponse habituelle" },
   "ct.info.response.v": { en: "Within 1 business day", fr: "En 1 jour ouvrable" },
   "ct.info.region": { en: "Based in", fr: "Basé à" },
@@ -592,6 +593,8 @@ export const dict = {
   },
   "ft.product": { en: "Product", fr: "Produit" },
   "ft.company": { en: "Company", fr: "Entreprise" },
+  "ft.sales": { en: "Sales & demos", fr: "Ventes et démos" },
+  "ft.support": { en: "Help & support", fr: "Aide et soutien" },
   "ft.lineage": { en: "Adjacent to Ops Companion", fr: "Adossé à Ops Companion" },
   "ft.rights": { en: "All rights reserved.", fr: "Tous droits réservés." },
   "ft.built": {
