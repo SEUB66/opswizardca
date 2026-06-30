@@ -1,4 +1,14 @@
-import { Globe, Wand2, Truck, ReceiptText, Palette, Users, type LucideIcon } from "lucide-react";
+import {
+  Globe,
+  Wand2,
+  Truck,
+  ReceiptText,
+  Palette,
+  Users,
+  ClipboardList,
+  ShieldCheck,
+  type LucideIcon,
+} from "lucide-react";
 import { useT, type TKey } from "@/lib/i18n";
 import { Reveal } from "../Reveal";
 import { AmbientGlow } from "../AmbientGlow";
@@ -10,6 +20,8 @@ const features: { icon: LucideIcon; t: TKey; d: TKey; n: string }[] = [
   { icon: ReceiptText, t: "feat.invoice.t", d: "feat.invoice.d", n: "04" },
   { icon: Palette, t: "feat.whitelabel.t", d: "feat.whitelabel.d", n: "05" },
   { icon: Users, t: "feat.pages.t", d: "feat.pages.d", n: "06" },
+  { icon: ClipboardList, t: "feat.forms.t", d: "feat.forms.d", n: "07" },
+  { icon: ShieldCheck, t: "feat.security.t", d: "feat.security.d", n: "08" },
 ];
 
 export function Features() {
@@ -30,11 +42,11 @@ export function Features() {
           </p>
         </Reveal>
 
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {features.map((f, i) => (
             <Reveal
               key={f.t}
-              delay={(i % 3) * 0.06}
+              delay={(i % 4) * 0.06}
               className="glass glass-edge glass-hover group relative flex flex-col overflow-hidden rounded-2xl p-6"
             >
               <div className="flex items-center justify-between">

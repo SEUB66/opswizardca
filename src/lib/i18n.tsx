@@ -127,6 +127,16 @@ export const dict = {
     en: "A team grid that humanizes your business and a contact page wired to email — both editable from the admin.",
     fr: "Une grille d'équipe qui humanise ta business et une page contact reliée à l'email — éditables depuis l'admin.",
   },
+  "feat.forms.t": { en: "Custom forms & emails", fr: "Formulaires et courriels sur mesure" },
+  "feat.forms.d": {
+    en: "Build any form — inspection, intake, satisfaction — not just quotes. Each submission can fire an automatic, branded email on demand.",
+    fr: "Bâtis n'importe quel formulaire — inspection, prise de contact, satisfaction — pas juste des soumissions. Chaque envoi peut déclencher un courriel automatique à ton image.",
+  },
+  "feat.security.t": { en: "Security & data isolation", fr: "Sécurité et isolation des données" },
+  "feat.security.d": {
+    en: "Industrial-grade security: strict row-level security (RLS), your data on your own Postgres — isolated and yours, never shared, never resold.",
+    fr: "Sécurité de calibre industriel : RLS stricte, tes données sur ton propre Postgres — isolées et à toi, jamais partagées, jamais revendues.",
+  },
 
   // ── Field operations (run the crew) ──────────────────────────
   "ops.kicker": { en: "// Run your whole crew", fr: "// Gère toute ton équipe" },
@@ -156,6 +166,21 @@ export const dict = {
   "ops.offline.d": {
     en: "Quotes, photos and punches keep working with no signal in the field and sync the moment you're back online.",
     fr: "Soumissions, photos et punchs fonctionnent sans signal et se synchronisent dès le retour du réseau.",
+  },
+  "ops.round.t": { en: "Pre-trip vehicle round", fr: "Ronde de départ du véhicule" },
+  "ops.round.d": {
+    en: "Crews check each point before rolling out; a flagged issue alerts the admins instantly — safety and proof, logged.",
+    fr: "L'équipe coche chaque point avant de partir ; un problème signalé alerte les admins instantanément — sécurité et preuve, consignées.",
+  },
+  "ops.maint.t": { en: "Maintenance PDF checklists", fr: "Checklists d'entretien PDF" },
+  "ops.maint.d": {
+    en: "Custom maintenance & inspection checklists your crew fills on-site and exports as clean, branded PDFs.",
+    fr: "Checklists d'entretien et d'inspection sur mesure que ton équipe remplit sur place et exporte en PDF propres, à ton image.",
+  },
+  "ops.photos.t": { en: "Job photos & proof", fr: "Photos et preuves de job" },
+  "ops.photos.d": {
+    en: "Technicians attach before/after photos to each work order — captured even offline, synced when back online.",
+    fr: "Les techniciens attachent des photos avant/après à chaque bon de travail — captées même hors-ligne, synchronisées au retour du réseau.",
   },
 
   // ── How it works ──────────────────────────────────────────────
@@ -427,6 +452,16 @@ export const dict = {
   "ct.info.response.v": { en: "Within 1 business day", fr: "En 1 jour ouvrable" },
   "ct.info.region": { en: "Based in", fr: "Basé à" },
   "ct.info.region.v": { en: "Québec · serving everywhere", fr: "Québec · partout au service" },
+  "ct.kb": { en: "Hit the Contact key", fr: "Appuie sur la touche Contact" },
+  "ct.kb.sub": {
+    en: "Old-school keyboard, modern software.",
+    fr: "Clavier old-school, logiciel moderne.",
+  },
+  "ct.form.t": { en: "Start your build", fr: "Lance ton build" },
+  "ct.form.d": {
+    en: "One licence. No subscription, ever.",
+    fr: "Une licence. Aucun abonnement, jamais.",
+  },
   "ct.f.name": { en: "Name", fr: "Nom" },
   "ct.f.email": { en: "Email", fr: "Courriel" },
   "ct.f.business": { en: "Business / trade", fr: "Business / métier" },

@@ -46,7 +46,7 @@ export function Navbar() {
       }`}
     >
       <div className="mx-auto flex h-20 max-w-[1560px] items-center justify-between gap-4 px-5 sm:px-8 lg:px-12">
-        <Logo />
+        <Logo imgClassName="h-16 w-auto sm:h-[4.25rem]" />
 
         <nav className="hidden items-center gap-0.5 xl:flex">
           {anchorLinks.map((l) => (

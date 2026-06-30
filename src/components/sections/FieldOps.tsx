@@ -1,11 +1,23 @@
-import { Truck, Fuel, Clock, WifiOff, type LucideIcon } from "lucide-react";
+import {
+  Truck,
+  Fuel,
+  Clock,
+  WifiOff,
+  ClipboardCheck,
+  FileText,
+  Camera,
+  type LucideIcon,
+} from "lucide-react";
 import { useT, type TKey } from "@/lib/i18n";
 import { Reveal } from "../Reveal";
 import { AmbientGlow } from "../AmbientGlow";
 
 const ops: { icon: LucideIcon; t: TKey; d: TKey }[] = [
+  { icon: ClipboardCheck, t: "ops.round.t", d: "ops.round.d" },
   { icon: Fuel, t: "ops.fuel.t", d: "ops.fuel.d" },
   { icon: Clock, t: "ops.punch.t", d: "ops.punch.d" },
+  { icon: FileText, t: "ops.maint.t", d: "ops.maint.d" },
+  { icon: Camera, t: "ops.photos.t", d: "ops.photos.d" },
   { icon: WifiOff, t: "ops.offline.t", d: "ops.offline.d" },
 ];
 
