@@ -4,6 +4,7 @@ import { Mail, ArrowUpRight } from "lucide-react";
 import { Logo } from "./Logo";
 import { useT, type TKey } from "@/lib/i18n";
 import { BRAND } from "@/lib/brand";
+import { cta } from "./cta";
 
 const productLinks: { hash: string; key: TKey }[] = [
   { hash: "produit", key: "nav.product" },
@@ -123,10 +124,7 @@ export function Footer() {
               <span className="footer-link-underline">hello@wizardops.ca</span>
             </a>
             <div className="mt-5">
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 rounded-full bg-brand px-4 py-2 text-sm font-bold text-white shadow-[0_8px_24px_-10px_rgba(124,58,237,0.7)] transition hover:translate-y-[-1px]"
-              >
+              <Link to="/contact" className={cta("primary", "sm")}>
                 {t("nav.demo")} <ArrowUpRight className="h-4 w-4" strokeWidth={2.4} />
               </Link>
             </div>

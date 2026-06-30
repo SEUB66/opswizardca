@@ -10,6 +10,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useT } from "@/lib/i18n";
 import { leadSchema, sendLead } from "@/lib/send-lead";
+import { cta } from "@/components/cta";
 
 export const Route = createFileRoute("/contact")({
   component: ContactPage,
@@ -154,7 +155,7 @@ function ContactPage() {
                 <button
                   type="submit"
                   disabled={status === "sending" || status === "sent"}
-                  className="mt-1 inline-flex items-center justify-center gap-2 rounded-full bg-brand px-6 py-3.5 text-sm font-bold text-white shadow-[0_12px_36px_-10px_rgba(124,58,237,0.75)] transition hover:translate-y-[-1px] disabled:cursor-not-allowed disabled:opacity-70"
+                  className={cta("primary", "md", "mt-1 w-full")}
                 >
                   {status === "sending" && <Loader2 className="h-4 w-4 animate-spin" />}
                   {status === "sent" && <CheckCircle2 className="h-4 w-4" />}

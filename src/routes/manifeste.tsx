@@ -4,6 +4,7 @@ import { SiteLayout } from "@/components/SiteLayout";
 import { Reveal } from "@/components/Reveal";
 import { AmbientGlow } from "@/components/AmbientGlow";
 import { useT, type TKey } from "@/lib/i18n";
+import { cta } from "@/components/cta";
 
 export const Route = createFileRoute("/manifeste")({
   component: ManifestoPage,
@@ -57,10 +58,7 @@ function ManifestoPage() {
           </Reveal>
 
           <Reveal className="mt-12">
-            <Link
-              to="/contact"
-              className="group inline-flex items-center gap-2 rounded-full bg-brand px-7 py-3.5 text-sm font-bold text-white shadow-[0_12px_36px_-10px_rgba(124,58,237,0.75)] transition hover:translate-y-[-1px]"
-            >
+            <Link to="/contact" className={cta("primary", "lg")}>
               <CalendarCheck className="h-4 w-4" strokeWidth={2.3} />
               {t("man.cta")}
             </Link>

@@ -11,21 +11,23 @@ import {
 import { useT } from "@/lib/i18n";
 import { BRAND, formatPrice } from "@/lib/brand";
 import { fadeUp, staggerParent } from "@/lib/motion";
+import { cta } from "../cta";
 import { AmbientGlow } from "../AmbientGlow";
 
 export function Hero() {
   const { t, lang } = useT();
 
-  // Value items overlaid on the open purple space of the brand card (the image
-  // already carries the logo bottom-right, so no logo/slogan repeat here).
-  const cardItems = [
-    { icon: InfinityIcon, label: t("hero.bullet.own") },
+  // 2×2 symmetric stat grid laid over the open purple space (the image already
+  // carries the logo bottom-right, so no logo/slogan repeat here).
+  const tiles = [
+    { icon: InfinityIcon, value: "∞", label: t("hero.tile.life") },
     {
       icon: BadgeDollarSign,
-      label: `${formatPrice(BRAND.priceLow, lang)}–${formatPrice(BRAND.priceHigh, lang)} · ${t("price.card.range")}`,
+      value: `${formatPrice(BRAND.priceLow, lang)}+`,
+      label: t("hero.tile.once"),
     },
-    { icon: Cloud, label: t("hero.bullet.infra") },
-    { icon: Languages, label: t("hero.bullet.bilingual") },
+    { icon: Cloud, value: lang === "fr" ? "0–10 $" : "$0–10", label: t("hero.tile.permonth") },
+    { icon: Languages, value: "FR / EN", label: t("hero.tile.bilingual") },
   ];
 
   return (
@@ -39,7 +41,7 @@ export function Hero() {
         <motion.div variants={staggerParent(0.1, 0.04)} initial="hidden" animate="show">
           <motion.div
             variants={fadeUp}
-            className="inline-flex w-fit items-center gap-2 rounded-full border border-border bg-card/70 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground backdrop-blur-md"
+            className="inline-flex w-fit items-center gap-2 rounded-md border border-border bg-card/70 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground backdrop-blur-md"
           >
             <span className="grid h-1.5 w-1.5 place-items-center rounded-full bg-violet animate-pulse" />
             {t("hero.badge")}
@@ -62,31 +64,23 @@ export function Hero() {
           </motion.p>
 
           <motion.div variants={fadeUp} className="mt-9 flex flex-wrap items-center gap-3.5">
-            <Link
-              to="/contact"
-              className="group inline-flex items-center gap-2 rounded-full bg-brand px-8 py-4 text-[0.95rem] font-bold text-white shadow-[0_14px_40px_-10px_rgba(124,58,237,0.8)] transition hover:translate-y-[-2px]"
-            >
+            <Link to="/contact" className={cta("primary", "lg")}>
               {t("hero.cta.demo")}
               <ArrowRight className="h-5 w-5 transition group-hover:translate-x-0.5" />
             </Link>
-            <Link
-              to="/"
-              hash="prix"
-              className="inline-flex items-center gap-2 rounded-full border border-border bg-card/70 px-7 py-4 text-[0.95rem] font-semibold text-foreground backdrop-blur transition hover:-translate-y-0.5 hover:border-foreground"
-            >
+            <Link to="/" hash="prix" className={cta("secondary", "lg")}>
               {t("hero.cta.pricing")}
             </Link>
           </motion.div>
         </motion.div>
 
-        {/* Right — the purple brand card (your image; value items over open space) */}
+        {/* Right — the purple brand card: 2×2 stat grid + image logo bottom-right */}
         <motion.div
           initial={{ opacity: 0, y: 28, scale: 0.97 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.12 }}
           className="relative mx-auto w-full max-w-xl lg:max-w-none"
         >
-          {/* soft violet bloom behind the card */}
           <div
             aria-hidden
             className="absolute -inset-6 -z-10 rounded-[2.5rem] opacity-70 blur-3xl"
@@ -100,21 +94,38 @@ export function Hero() {
               decoding="async"
               fetchPriority="high"
             />
-            {/* value chips floated over the open (top/left) purple space */}
             <div className="absolute inset-0 flex flex-col p-5 sm:p-7">
-              <ul className="grid max-w-[78%] gap-2.5">
-                {cardItems.map((item) => (
-                  <li
-                    key={item.label}
-                    className="flex items-center gap-3 rounded-xl bg-[#1E0E3A]/45 px-4 py-3 text-[0.95rem] font-semibold text-white shadow-sm ring-1 ring-white/20 backdrop-blur-md"
+              {/* eyebrow */}
+              <div className="flex items-center justify-between">
+                <span className="rounded-md bg-[#1E0E3A]/50 px-3 py-1 font-display text-[0.62rem] font-black uppercase tracking-[0.2em] text-white ring-1 ring-white/15 backdrop-blur-md">
+                  {t("hero.kit")}
+                </span>
+                <span className="rounded-md bg-[#1E0E3A]/50 px-2.5 py-1 font-display text-[0.62rem] font-black uppercase tracking-[0.2em] text-cyan-glow ring-1 ring-white/15 backdrop-blur-md">
+                  v1
+                </span>
+              </div>
+
+              {/* 2×2 symmetric stat grid */}
+              <div className="mt-4 grid grid-cols-2 gap-3 sm:mt-5">
+                {tiles.map((tile) => (
+                  <div
+                    key={tile.label}
+                    className="rounded-xl bg-[#1E0E3A]/45 p-3.5 ring-1 ring-white/15 backdrop-blur-md"
                   >
-                    <item.icon className="h-5 w-5 shrink-0 text-cyan-glow" strokeWidth={2.1} />
-                    {item.label}
-                  </li>
+                    <tile.icon className="h-5 w-5 text-cyan-glow" strokeWidth={2.1} />
+                    <div className="mt-2 font-display text-xl font-black leading-none tracking-tight text-white sm:text-2xl">
+                      {tile.value}
+                    </div>
+                    <div className="mt-1 text-[0.62rem] font-semibold uppercase tracking-wide text-white/70">
+                      {tile.label}
+                    </div>
+                  </div>
                 ))}
-              </ul>
+              </div>
+
+              {/* bottom-left pill balances the image's bottom-right logo */}
               <div className="mt-auto">
-                <span className="inline-flex items-center gap-2 rounded-full bg-[#1E0E3A]/55 px-4 py-2 text-sm font-bold text-white ring-1 ring-white/20 backdrop-blur-md">
+                <span className="inline-flex items-center gap-2 rounded-md bg-[#1E0E3A]/55 px-3.5 py-2 font-display text-[0.7rem] font-bold uppercase tracking-wide text-white ring-1 ring-white/15 backdrop-blur-md">
                   <Timer className="h-4 w-4 text-cyan-glow" strokeWidth={2.3} />
                   {t("roi.breakeven")} · &lt; 2 {t("roi.months")}
                 </span>

@@ -44,6 +44,11 @@ export const dict = {
     en: "Wizard Ops — pixel-art wizard logo",
     fr: "Wizard Ops — logo magicien pixel-art",
   },
+  "hero.kit": { en: "The Kit", fr: "Le Kit" },
+  "hero.tile.life": { en: "Lifetime", fr: "À vie" },
+  "hero.tile.once": { en: "One-time", fr: "Unique" },
+  "hero.tile.permonth": { en: "Per month", fr: "Par mois" },
+  "hero.tile.bilingual": { en: "Bilingual", fr: "Bilingue" },
   "hero.stat.infra": { en: "/ mo infra", fr: "/ mois infra" },
 
   // ── Sector marquee ────────────────────────────────────────────
@@ -123,6 +128,36 @@ export const dict = {
     fr: "Une grille d'équipe qui humanise ta business et une page contact reliée à l'email — éditables depuis l'admin.",
   },
 
+  // ── Field operations (run the crew) ──────────────────────────
+  "ops.kicker": { en: "// Run your whole crew", fr: "// Gère toute ton équipe" },
+  "ops.included": { en: "Included", fr: "Inclus" },
+  "ops.title.a": { en: "Not just a website —", fr: "Pas juste un site web —" },
+  "ops.title.b": { en: "your whole field operation.", fr: "toute ton opération terrain." },
+  "ops.lead": {
+    en: "The kit runs the crew, not just the funnel: a branded fleet your team is proud of, fuel and expenses tracked per truck, time-clock punches, and an offline-first app that never quits in the field.",
+    fr: "Le kit gère l'équipe, pas juste le tunnel de vente : une flotte à ton image dont ton équipe est fière, carburant et dépenses suivis par camion, le punch, et une app hors-ligne qui ne lâche jamais sur le terrain.",
+  },
+  "ops.fleet.t": { en: "Branded fleet", fr: "Flotte à ton image" },
+  "ops.fleet.d": {
+    en: "We brand and 3D-model your trucks — included. One identity for the whole crew: the sense of belonging that turns a job into a team.",
+    fr: "On brande et modélise tes camions en 3D — inclus. Une seule identité pour toute l'équipe : le sentiment d'appartenance qui transforme une job en équipe.",
+  },
+  "ops.fuel.t": { en: "Fuel & expense log", fr: "Carburant et dépenses" },
+  "ops.fuel.d": {
+    en: "Log every gas fill-up and expense per truck — full history and totals, no shoebox of receipts.",
+    fr: "Enregistre chaque plein et dépense par camion — historique complet et totaux, fini la boîte de reçus.",
+  },
+  "ops.punch.t": { en: "Time-clock punch", fr: "Le punch" },
+  "ops.punch.d": {
+    en: "Crews punch in and out from their phone; live timesheets, overtime and payroll-ready hours.",
+    fr: "Les équipes punchent depuis leur cell ; feuilles de temps en direct, temps supp et heures prêtes pour la paie.",
+  },
+  "ops.offline.t": { en: "Offline-first", fr: "Hors-ligne d'abord" },
+  "ops.offline.d": {
+    en: "Quotes, photos and punches keep working with no signal in the field and sync the moment you're back online.",
+    fr: "Soumissions, photos et punchs fonctionnent sans signal et se synchronisent dès le retour du réseau.",
+  },
+
   // ── How it works ──────────────────────────────────────────────
   "how.kicker": {
     en: "// From clone to live in 10 minutes",
@@ -166,6 +201,23 @@ export const dict = {
     fr: "+ 0–10 $ / mois d'infra, au coût brut sur tes propres comptes",
   },
   "price.card.cta": { en: "Book a demo", fr: "Réserver une démo" },
+  "price.tiers.title": { en: "What sets your price", fr: "Ce qui détermine ton prix" },
+  "price.tiers.lead": {
+    en: "Moving your data is like hauling a giant toolbox from one garage to another — it takes time and expertise to lose nothing on the way. That's the only difference between the two:",
+    fr: "Transférer tes données, c'est comme déménager un coffre à outils géant d'un garage à l'autre — ça prend du temps et de l'expertise pour ne rien perdre en chemin. C'est la seule différence entre les deux :",
+  },
+  "price.tier.base.t": { en: "The Raw Kit", fr: "Le Kit Brut" },
+  "price.tier.base.tag": { en: "Empty toolbox", fr: "Coffre vide" },
+  "price.tier.base.d": {
+    en: "You buy the drill and the tools. We deliver the brand-new software with the infrastructure ready — but the toolbox is empty. You organize it and enter your data from scratch.",
+    fr: "Tu achètes la drill et les outils. On livre le logiciel flambant neuf, l'infrastructure prête — mais le coffre est vide. C'est toi qui l'organises et qui entres tes données de zéro.",
+  },
+  "price.tier.full.t": { en: "Turnkey", fr: "Clé en main" },
+  "price.tier.full.tag": { en: "Migration included", fr: "Migration incluse" },
+  "price.tier.full.d": {
+    en: "We handle everything. We build the structure and migrate your whole world in — old inventory, clients, paper or Excel history — cleanly into your new database, without you losing a minute on the job.",
+    fr: "On s'occupe de tout. On bâtit la structure et on migre ton monde au complet — vieil inventaire, clients, historiques papier ou Excel — proprement dans ta nouvelle base, sans que tu perdes une minute de break.",
+  },
   "price.incl.title": { en: "Everything included", fr: "Tout est inclus" },
   "price.incl.1": {
     en: "Dedicated instance deployed (TanStack Start + Supabase)",

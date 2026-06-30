@@ -4,6 +4,7 @@ import { Hero } from "@/components/sections/Hero";
 import { SectorMarquee } from "@/components/sections/SectorMarquee";
 import { ProblemSaaS } from "@/components/sections/ProblemSaaS";
 import { Features } from "@/components/sections/Features";
+import { FieldOps } from "@/components/sections/FieldOps";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { Pricing } from "@/components/sections/Pricing";
 import { Sectors } from "@/components/sections/Sectors";
@@ -22,6 +23,7 @@ function HomePage() {
       <SectorMarquee />
       <ProblemSaaS />
       <Features />
+      <FieldOps />
       <HowItWorks />
       <Pricing />
       <Sectors />
