@@ -10,7 +10,7 @@ type Variant = "primary" | "secondary" | "light" | "ghost";
 type Size = "sm" | "md" | "lg";
 
 const BASE =
-  "group inline-flex items-center justify-center gap-2 rounded-lg font-display font-bold uppercase tracking-[0.12em] transition duration-200 will-change-transform disabled:cursor-not-allowed disabled:opacity-70";
+  "group inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg font-display font-bold uppercase tracking-[0.12em] transition duration-200 will-change-transform disabled:cursor-not-allowed disabled:opacity-70";
 
 const VARIANT: Record<Variant, string> = {
   primary:

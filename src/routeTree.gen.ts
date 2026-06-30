@@ -10,12 +10,18 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ManifesteRouteImport } from './routes/manifeste'
+import { Route as GuideRouteImport } from './routes/guide'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
 
 const ManifesteRoute = ManifesteRouteImport.update({
   id: '/manifeste',
   path: '/manifeste',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GuideRoute = GuideRouteImport.update({
+  id: '/guide',
+  path: '/guide',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -32,30 +38,34 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
+  '/guide': typeof GuideRoute
   '/manifeste': typeof ManifesteRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
+  '/guide': typeof GuideRoute
   '/manifeste': typeof ManifesteRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
+  '/guide': typeof GuideRoute
   '/manifeste': typeof ManifesteRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/contact' | '/manifeste'
+  fullPaths: '/' | '/contact' | '/guide' | '/manifeste'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/contact' | '/manifeste'
-  id: '__root__' | '/' | '/contact' | '/manifeste'
+  to: '/' | '/contact' | '/guide' | '/manifeste'
+  id: '__root__' | '/' | '/contact' | '/guide' | '/manifeste'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContactRoute: typeof ContactRoute
+  GuideRoute: typeof GuideRoute
   ManifesteRoute: typeof ManifesteRoute
 }
 
@@ -66,6 +76,13 @@ declare module '@tanstack/react-router' {
       path: '/manifeste'
       fullPath: '/manifeste'
       preLoaderRoute: typeof ManifesteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guide': {
+      id: '/guide'
+      path: '/guide'
+      fullPath: '/guide'
+      preLoaderRoute: typeof GuideRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -88,6 +105,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactRoute: ContactRoute,
+  GuideRoute: GuideRoute,
   ManifesteRoute: ManifesteRoute,
 }
 export const routeTree = rootRouteImport
