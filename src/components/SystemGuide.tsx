@@ -35,7 +35,7 @@ const GUIDE: Section[] = [
         "Sign in to your admin with your email and password.",
         "Pick the language (FR/EN) and theme at the top.",
         "Your role (admin or employee) controls which tabs you see.",
-        "Admins see everything; employees see their agenda, calendar and work orders.",
+        "Admins see everything; employees see their dashboard, calendar and work orders.",
       ],
     },
     fr: {
@@ -44,7 +44,7 @@ const GUIDE: Section[] = [
         "Connecte-toi à ton admin avec ton courriel et mot de passe.",
         "Choisis la langue (FR/EN) et le thème en haut de l'écran.",
         "Ton rôle (administrateur ou employé) détermine les onglets visibles.",
-        "Les admins voient tout ; les employés voient leur agenda, le calendrier et les bons de travail.",
+        "Les admins voient tout ; les employés voient leur tableau de bord, le calendrier et les bons de travail.",
       ],
     },
   },
@@ -52,9 +52,9 @@ const GUIDE: Section[] = [
     Icon: Sun,
     color: "#0EA5E9",
     en: {
-      t: "My agenda (employee)",
+      t: "My dashboard (employee)",
       steps: [
-        '"My agenda" tab: your day\'s jobs, sorted.',
+        '"Dashboard" tab: your day\'s jobs, sorted.',
         'Tap a job to open it, then "En route": the GPS opens and the client is notified with the vehicle photo.',
         '"Pre-trip round": check each point before leaving; an issue alerts the admins.',
         '"Add gas receipt": amount, liters, odometer — mileage updates itself.',
@@ -62,9 +62,9 @@ const GUIDE: Section[] = [
       ],
     },
     fr: {
-      t: "Mon agenda (employé)",
+      t: "Mon tableau de bord (employé)",
       steps: [
-        "Onglet « Mon agenda » : tes jobs du jour, triés.",
+        "Onglet « Tableau de bord » : tes jobs du jour, triés.",
         "Clique un job pour ouvrir le détail, puis « En route » : le GPS s'ouvre et le client est averti avec la photo du véhicule.",
         "« Ronde de départ » : coche chaque point avant de partir ; un problème alerte les admins.",
         "« Ajouter facture essence » : montant, litres, odomètre — le kilométrage se met à jour seul.",
@@ -104,7 +104,7 @@ const GUIDE: Section[] = [
       steps: [
         '"Work orders" tab: every confirmed job.',
         "Open an order to assign a technician and set the date/time.",
-        'The technician sees it in their agenda and taps "En route" on the day.',
+        'The technician sees it in their dashboard and taps "En route" on the day.',
         'Set the status to "Done" once finished — it becomes billable.',
       ],
     },
@@ -113,7 +113,7 @@ const GUIDE: Section[] = [
       steps: [
         "Onglet « Bons de travail » : tous les jobs confirmés.",
         "Ouvre un bon pour assigner un technicien et fixer la date/heure.",
-        "Le technicien le voit dans son agenda et lance « En route » le jour venu.",
+        "Le technicien le voit dans son tableau de bord et lance « En route » le jour venu.",
         "Change le statut à « Terminé » une fois le travail fait — il devient facturable.",
       ],
     },
