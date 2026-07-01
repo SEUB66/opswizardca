@@ -535,15 +535,12 @@ export const dict = {
     fr: "Sébastien Germain sur une télé rétro",
   },
   // CRT terminal lines (typed on the retro PC screen)
-  "crt.l1": { en: "seub.net :: software engineering", fr: "seub.net :: génie logiciel" },
-  "crt.l2": { en: "> 20+ years online ............ OK", fr: "> 20+ ans en ligne ........... OK" },
-  "crt.l3": { en: "> lifetime software .......... OK", fr: "> logiciel à vie ............. OK" },
-  "crt.l4": {
-    en: "> subscriptions .............. KILLED",
-    fr: "> abonnements ................ TUÉS",
-  },
-  "crt.l5": { en: "> status: ready to build", fr: "> statut: prêt à bâtir" },
-  "crt.l6": { en: "> tell me what to build_", fr: "> dis-moi quoi bâtir_" },
+  "crt.l1": { en: "seub.net :: online", fr: "seub.net :: actif" },
+  "crt.l2": { en: "> 20y+ online . OK", fr: "> 20+ ans .... OK" },
+  "crt.l3": { en: "> lifetime sw . OK", fr: "> à vie ...... OK" },
+  "crt.l4": { en: "> subs .... KILLED", fr: "> abos ..... TUÉS" },
+  "crt.l5": { en: "> ready to build", fr: "> prêt à bâtir" },
+  "crt.l6": { en: "> what's next?_", fr: "> la suite ?_" },
 
   // ── System guide ─────────────────────────────────────────────
   "nav.guide": { en: "Guide", fr: "Guide" },

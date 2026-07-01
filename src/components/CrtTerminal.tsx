@@ -81,7 +81,7 @@ export function CrtTerminal({ className = "" }: { className?: string }) {
         className="absolute overflow-hidden rounded-[3px]"
         style={{ left: "37.5%", top: "26%", width: "31.5%", height: "27%" }}
       >
-        <pre className="crt-text m-0 text-[0.52rem] leading-[1.3] sm:text-[0.62rem] md:text-[0.7rem]">
+        <pre className="crt-text m-0 text-[0.5rem] leading-[1.3] sm:text-[0.58rem] md:text-[0.64rem]">
           {text}
           <span className="crt-cursor h-[0.9em] align-middle" />
         </pre>
